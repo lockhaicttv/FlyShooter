@@ -58,7 +58,7 @@ public abstract class Spawner : CMonoBehaviour
         
         Transform newPrefab = this.GetPrefabFromPool(prefab);
         newPrefab.parent = this.holder;
-        newPrefab.SetPositionAndRotation(spawnPosition, spawnRotation);
+        newPrefab.SetLocalPositionAndRotation(spawnPosition, spawnRotation);
         
         return newPrefab;
     }
@@ -89,10 +89,9 @@ public abstract class Spawner : CMonoBehaviour
     {
         foreach (Transform prefab in this.prefabs)
         {
-            Debug.Log(prefab.name);
             if (prefab.name == prefabName) return prefab;
         }
-        
+        Debug.LogError("Cannot find prefab name: " + prefabName);
         return null;
     }
 }

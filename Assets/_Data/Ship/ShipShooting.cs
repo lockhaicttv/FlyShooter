@@ -29,7 +29,7 @@ public class ShipShooting : MonoBehaviour
             Debug.LogWarning("Prefab not found: " + BulletSpawner.Instance.bulletOne);
             return;
         }
-        
+
         newBullet.gameObject.SetActive(true);
     }
 
