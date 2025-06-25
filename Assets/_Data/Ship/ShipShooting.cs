@@ -33,7 +33,6 @@ public class ShipShooting : MonoBehaviour
         if (newBullet == null) return;
 
         newBullet.gameObject.SetActive(true);
-        Debug.Log("Shooting");
     }
 
     protected virtual bool IsShooting()

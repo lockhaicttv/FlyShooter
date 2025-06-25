@@ -1,20 +1,21 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class JunkRandom : CMonoBehaviour
 {
-    [SerializeField] protected JunkController junkController;
+    [SerializeField] protected JunkSpawnerController junkSpawnerController;
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadJunkController();
+        this.LoadJunkSpawnerController();
     }
 
-    protected virtual void LoadJunkController()
+    protected virtual void LoadJunkSpawnerController()
     {
-        if (this.junkController != null) return;
-        this.junkController = GetComponent<JunkController>();
+        if (this.junkSpawnerController != null) return;
+        this.junkSpawnerController = GetComponent<JunkSpawnerController>();
         Debug.Log(transform.name + ": LoadJunkController", gameObject);
     }
 
@@ -25,10 +26,10 @@ public class JunkRandom : CMonoBehaviour
 
     protected virtual void RandomJunk()
     {
-        Vector3 spawnPos = this.junkController.JunkSpawnPoints.RandomSpawnPoint().position;
+        Vector3 spawnPos = this.junkSpawnerController.JunkSpawnPoints.RandomSpawnPoint().position;
         Quaternion rotation = transform.rotation;
         
-        this.junkController.JunkSpawner.Spawn(JunkSpawner.meteoriteOne, spawnPos, rotation);
+        this.junkSpawnerController.JunkSpawner.Spawn(JunkSpawner.meteoriteOne, spawnPos, rotation);
         Invoke(nameof(this.RandomJunk), 1f);
     }
 }
