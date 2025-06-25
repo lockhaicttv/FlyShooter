@@ -1,36 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ShipShooting : MonoBehaviour
 {
     [SerializeField] protected bool isShooting = false;
-    [SerializeField] protected float timeDelay = 0.1f;
-    [SerializeField] protected float timer = 0f;
+    [SerializeField] protected float shootDelay = 0.2f;
+    [SerializeField] protected float shootTimer = 0f;
+
     void Update()
     {
-       this.Shooting();
-       this.IsShooting();
+        this.IsShooting();
+    }
+
+    private void FixedUpdate()
+    {
+        this.Shooting();
     }
 
     protected virtual void Shooting()
     {
-        if (!isShooting) return;
-     
-        this.timer += Time.deltaTime;
-        if (this.timer < this.timeDelay) return;
-        this.timer = 0f;
-        
-        Vector3 spawnPos = this.transform.parent.position;
-        Quaternion spawnRot = this.transform.parent.rotation;
-        
-        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.Instance.bulletOne,spawnPos, spawnRot);
+        this.shootTimer += Time.fixedDeltaTime;
 
-        if (newBullet == null)
-        {
-            Debug.LogWarning("Prefab not found: " + BulletSpawner.Instance.bulletOne);
-            return;
-        }
+        if (!this.isShooting) return;
+        if (this.shootTimer < this.shootDelay) return;
+        this.shootTimer = 0;
+
+        Vector3 spawnPos = transform.position;
+        Quaternion rotation = transform.parent.rotation;
+
+        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne, spawnPos, rotation);
+        if (newBullet == null) return;
 
         newBullet.gameObject.SetActive(true);
+        Debug.Log("Shooting");
     }
 
     protected virtual bool IsShooting()

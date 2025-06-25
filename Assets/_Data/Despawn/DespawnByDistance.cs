@@ -1,29 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DespawnByDistance : Despawn
 {
     [SerializeField] protected float disLimit = 70f;
-    [SerializeField] protected Transform mainCamera;
-    [SerializeField] protected float distance;
-
+    [SerializeField] protected float distance = 0f;
+    [SerializeField] protected Transform mainCam;
 
     protected override void LoadComponents()
     {
         this.LoadCamera();
     }
 
-    private void LoadCamera()
+    protected virtual void LoadCamera()
     {
-        if (this.mainCamera != null) return;
-        
-        this.mainCamera = Transform.FindObjectOfType<Camera>().transform;
-        Debug.Log("Load main camera");
+        if (this.mainCam != null) return;
+        this.mainCam = Transform.FindObjectOfType<Camera>().transform;
+        Debug.Log(transform.parent.name + ": LoadCamera", gameObject);
     }
-    
+
     protected override bool CanDespawn()
     {
-        this.distance = Vector3.Distance(transform.position, this.mainCamera.position);
-        
+        this.distance = Vector3.Distance(transform.position, this.mainCam.position);
         return this.distance > this.disLimit;
     }
 }

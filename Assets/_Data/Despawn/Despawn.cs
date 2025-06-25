@@ -1,23 +1,24 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Despawn : CMonoBehaviour
 {
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         this.Despawning();
     }
 
-    private void Despawning()
+    protected virtual void Despawning()
     {
-     this.DespawnObject();   
+        if (!this.CanDespawn()) return;
+        this.DespawnObject();
     }
 
     protected virtual void DespawnObject()
     {
-        if (!this.CanDespawn()) return;
-        Destroy(this.gameObject);
+        Destroy(transform.parent.gameObject);
     }
-    
+
     protected abstract bool CanDespawn();
 }

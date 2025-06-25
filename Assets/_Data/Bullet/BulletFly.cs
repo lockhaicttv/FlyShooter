@@ -1,13 +1,10 @@
 using UnityEngine;
 
-public class BulletFly : MonoBehaviour
+public class BulletFly : ParentFly
 {
-   [SerializeField] protected int moveSpeed = 10;
-   [SerializeField] protected Vector3 direction = Vector3.right;
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.parent.Translate(direction * Time.deltaTime * this.moveSpeed);
-    }
+   protected override void ResetValue()
+   {
+      base.ResetValue();
+      this.moveSpeed = 7f;
+   }
 }
