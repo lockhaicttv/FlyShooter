@@ -19,7 +19,6 @@ public class JunkFly : ParentFly
     protected virtual void GetFlyDirection()
     {
         Vector3 camPos = GameController.Instance.MainCam.transform.position;
-        Debug.Log(camPos);
         Vector3 junkPos = transform.parent.position;
         
         camPos.x = Random.Range(this.minCamPos, this.maxCamPos);

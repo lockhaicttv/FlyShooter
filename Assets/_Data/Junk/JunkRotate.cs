@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class JunkRotate : JunkAbstract
 {
-    [SerializeField] protected float rotateSpeed;
+    [SerializeField] protected float rotateSpeed = 9f;
 
     protected void FixedUpdate()
     {

@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7319a4736a86cdf43a1f4c7a6a472419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  junkController: {fileID: 658260485}
+  junkSpawnerController: {fileID: 0}
 --- !u!114 &658260485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,6 +490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 785232678}
+  - component: {fileID: 785232679}
   m_Layer: 0
   m_Name: Meteorite_1
   m_TagString: Untagged
@@ -513,8 +514,22 @@ Transform:
   - {fileID: 1797576715}
   - {fileID: 1328265502}
   - {fileID: 1898431183}
+  - {fileID: 2090389075}
   m_Father: {fileID: 1511893144}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &785232679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785232677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065be0360cb44b6459a3f65e0ac850b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 0}
 --- !u!1 &850678705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,6 +1197,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   direction: {x: 1, y: 0, z: 0}
+--- !u!1 &2090389074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2090389075}
+  - component: {fileID: 2090389076}
+  m_Layer: 0
+  m_Name: JunkRotate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2090389075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090389074}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.44386, y: 0.37885, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 785232678}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2090389076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090389074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 282c405d600d3404c8833ad6d002ecd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  junkController: {fileID: 0}
+  rotateSpeed: 0
 --- !u!1 &2097890593
 GameObject:
   m_ObjectHideFlags: 0

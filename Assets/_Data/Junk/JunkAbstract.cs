@@ -5,7 +5,7 @@ public abstract class JunkAbstract : CMonoBehaviour
     [SerializeField] protected JunkController junkController;
     [SerializeField] public JunkController JunkController {get => junkController;}
 
-    protected virtual void LoadComponents()
+    protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadJunkController();
