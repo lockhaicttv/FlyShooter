@@ -7,6 +7,8 @@ public abstract class Spawner : CMonoBehaviour
     [SerializeField] protected Transform holder;
     [SerializeField] protected List<Transform> prefabs;
     [SerializeField] protected List<Transform> poolObjs;
+    [SerializeField] protected int spawnAmount = 0;
+    [SerializeField] public int SpawnAmount { get { return spawnAmount; } }
 
     protected override void LoadComponents()
     {
@@ -52,13 +54,21 @@ public abstract class Spawner : CMonoBehaviour
             Debug.LogWarning("Prefab not found: " + prefabName);
             return null;
         }
+        
+        return this.Spawn(prefab, spawnPos, rotation);
+    }
 
+    public virtual Transform Spawn(Transform prefab, Vector3 spawnPos, Quaternion rotation)
+    {
         Transform newPrefab = this.GetObjectFromPool(prefab);
         newPrefab.SetPositionAndRotation(spawnPos, rotation);
 
         newPrefab.parent = this.holder;
+        this.spawnAmount++;
+        
         return newPrefab;
     }
+
 
     protected virtual Transform GetObjectFromPool(Transform prefab)
     {
@@ -79,6 +89,7 @@ public abstract class Spawner : CMonoBehaviour
     {
         this.poolObjs.Add(obj);
         obj.gameObject.SetActive(false);
+        this.spawnAmount--;
     }
 
     public virtual Transform GetPrefabByName(string prefabName)
@@ -91,4 +102,10 @@ public abstract class Spawner : CMonoBehaviour
         return null;
     }
 
+    public virtual Transform RandomPrefab()
+    {
+        int ran = Random.Range(0, this.prefabs.Count);
+        
+        return this.prefabs[ran];
+    }
 }

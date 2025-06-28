@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(SphereCollider))]
 public class DamageReceiver : CMonoBehaviour
 {
     [Header("Damage Receiver")]
@@ -39,6 +40,7 @@ public class DamageReceiver : CMonoBehaviour
     {
         this.hp -= damage;
         if (this.hp <= 0) this.hp = 0;
+        this.CheckIsDead();
     }
 
     public virtual void AddHp(int hp)
