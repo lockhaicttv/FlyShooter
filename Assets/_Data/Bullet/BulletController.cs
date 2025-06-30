@@ -5,10 +5,13 @@ public class BulletController : CMonoBehaviour
     [SerializeField] protected Transform model;
     [SerializeField] protected BulletDespawn bulletDespawn;
     [SerializeField] protected BulletDamageSender bulletDamageSender;
+    [SerializeField] protected Transform shooter;
     
     public Transform Model { get => model; }
     public BulletDespawn BulletDespawn { get => bulletDespawn; }
     public BulletDamageSender BulletDamageSender { get => bulletDamageSender; }
+    public Transform Shooter { get => shooter; }
+    
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -36,5 +39,10 @@ public class BulletController : CMonoBehaviour
         if (this.bulletDamageSender != null) return;
         this.bulletDamageSender = transform.GetComponentInChildren<BulletDamageSender>();
         Debug.Log(transform.name + ": LoadBulletDamageSender", gameObject);
+    }
+
+    public virtual void SetShooter(Transform shooter)
+    {
+        this.shooter = shooter;
     }
 }
