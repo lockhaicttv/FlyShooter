@@ -2,14 +2,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
-public class DamageReceiver : CMonoBehaviour
+public abstract class DamageReceiver : CMonoBehaviour
 {
     [Header("Damage Receiver")]
     [SerializeField] protected SphereCollider sphereCollider;
     [SerializeField] protected int maxHp = 10;
     [SerializeField] protected int hp = 0;
     [SerializeField] protected bool isDead = false;
-
 
     protected override void OnEnable()
     {
@@ -23,6 +22,8 @@ public class DamageReceiver : CMonoBehaviour
         this.LoadSphereCollider();
     }
 
+
+
     protected virtual void LoadSphereCollider()
     {
         if (this.sphereCollider != null) return;
@@ -34,6 +35,7 @@ public class DamageReceiver : CMonoBehaviour
     public virtual void Reborn()
     {
         this.hp = this.maxHp;
+        this.isDead = false;
     }
 
     public virtual void Deduct(int damage)
@@ -60,8 +62,5 @@ public class DamageReceiver : CMonoBehaviour
         this.OnDead();
     }
 
-    protected virtual void OnDead()
-    {
-        // For override
-    }
+    protected abstract void OnDead();
 }

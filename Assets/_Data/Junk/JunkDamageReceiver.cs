@@ -10,6 +10,7 @@ public class JunkDamageReceiver : DamageReceiver
         base.LoadComponents();
         this.LoadJunkController();
     }
+    
 
     protected virtual void LoadJunkController()
     {
@@ -20,5 +21,24 @@ public class JunkDamageReceiver : DamageReceiver
     protected override void OnDead()
     {
         this.junkController.JunkDespawn.DespawnObject();
+        this.OnDeadFX();
+    }
+
+    protected virtual void OnDeadFX()
+    {
+        string fxName = this.GetOnDeadFXName();
+        Transform fxDead = FXSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
+        fxDead.gameObject.SetActive(true);
+    }
+
+    protected virtual string GetOnDeadFXName()
+    {
+        return FXSpawner.smokeOne;
+    }
+
+    public override void Reborn()
+    {
+        this.maxHp = this.junkController.JunkSO.maxHP;
+        base.Reborn();
     }
 }

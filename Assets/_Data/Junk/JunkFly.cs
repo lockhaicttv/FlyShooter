@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class JunkFly : ParentFly
 {
-    [SerializeField] protected float minCamPos = -16f;
-    [SerializeField] protected float maxCamPos = 16f;
+    [SerializeField] protected float minCamPos = -8f;
+    [SerializeField] protected float maxCamPos = 8f;
     protected override void ResetValue()
     {
         base.ResetValue();

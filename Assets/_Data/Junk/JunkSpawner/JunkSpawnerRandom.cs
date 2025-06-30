@@ -37,7 +37,7 @@ public class JunkSpawnerRandom : CMonoBehaviour
         Vector3 spawnPos = this.junkSpawnerController.JunkSpawnPoints.RandomSpawnPoint().position;
         Quaternion rotation = transform.rotation;
         Transform junkPrefab = this.junkSpawnerController.JunkSpawner.RandomPrefab();
-        Transform obj = this.junkSpawnerController.JunkSpawner.Spawn(JunkSpawner.meteoriteOne, spawnPos, rotation);
+        Transform obj = this.junkSpawnerController.JunkSpawner.Spawn(junkPrefab, spawnPos, rotation);
         obj.gameObject.SetActive(true);
     }
 
