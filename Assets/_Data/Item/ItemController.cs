@@ -17,21 +17,11 @@ public class ItemController : CMonoBehaviour
         get => itemDespawn;
     }
 
-    [SerializeField] protected ItemSO itemSO;
-
-    [SerializeField]
-    public ItemSO ItemSO
-    { 
-        get => itemSO;
-    }
-
-
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadModel();
         this.LoadItemDespawn();
-        this.LoadJunkSO();
     }
 
     protected virtual void LoadModel()
@@ -45,11 +35,5 @@ public class ItemController : CMonoBehaviour
     {
         if (this.itemDespawn != null) return;
         this.itemDespawn = transform.GetComponentInChildren<ItemDespawn>();
-    }
-
-    protected virtual void LoadJunkSO()
-    {
-        if (this.ItemSO != null) return;
-        this.itemSO = Resources.Load<ItemSO>("Item/" + transform.name);
     }
 }

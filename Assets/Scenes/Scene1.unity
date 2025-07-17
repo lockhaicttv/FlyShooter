@@ -449,7 +449,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1540572427}
   itemDespawn: {fileID: 1203794030}
-  itemSO: {fileID: 11400000, guid: 68221ca7b8d9c1e44a2b29b4315339c1, type: 2}
 --- !u!1 &385405295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,7 +2225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1609577959
 Transform:
   m_ObjectHideFlags: 0
@@ -2259,7 +2258,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 876739462}
   itemDespawn: {fileID: 1021489027}
-  itemSO: {fileID: 11400000, guid: 78d6657bf2ec0ee4c84e7bb6eb8d437f, type: 2}
 --- !u!1 &1624927044
 GameObject:
   m_ObjectHideFlags: 0
