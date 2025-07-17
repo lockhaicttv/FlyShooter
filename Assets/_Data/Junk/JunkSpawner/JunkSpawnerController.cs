@@ -24,6 +24,6 @@ public class JunkSpawnerController : CMonoBehaviour
     protected virtual void LoadJunkSpawnPoints()
     {
         if (this.junkSpawnPoints != null) return;
-        this.junkSpawnPoints = Transform.FindObjectOfType<JunkSpawnPoints>();
+        this.junkSpawnPoints = Transform.FindFirstObjectByType<JunkSpawnPoints>();
     }
 }

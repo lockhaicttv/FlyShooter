@@ -16,7 +16,7 @@ public class DespawnByDistance : Despawn
     protected virtual void LoadCamera()
     {
         if (this.mainCam != null) return;
-        this.mainCam = Transform.FindObjectOfType<Camera>().transform;
+        this.mainCam = Transform.FindFirstObjectByType<Camera>().transform;
         Debug.Log(transform.parent.name + ": LoadCamera", gameObject);
     }
 

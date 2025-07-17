@@ -23,7 +23,7 @@ public class GameController : CMonoBehaviour
     protected virtual void LoadCamera()
     {
         if (this.mainCam != null) return;
-        this.mainCam = GameController.FindObjectOfType<Camera>();
+        this.mainCam = GameController.FindFirstObjectByType<Camera>();
         Debug.Log(transform.name + ": LoadCamera", gameObject);
     }
 }

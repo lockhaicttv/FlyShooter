@@ -10,6 +10,11 @@ public class CMonoBehaviour : MonoBehaviour
         this.ResetValue();
     }
 
+    protected virtual void Start()
+    {
+        // for override
+    }
+    
     protected virtual void Awake()
     {
         this.LoadComponents();

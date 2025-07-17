@@ -1,21 +1,24 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemDropSpawner: Spawner
+public class ItemDropSpawner : Spawner
 {
-    private static ItemDropSpawner instance;
-    public static ItemDropSpawner Instance { get => instance; }
+    protected static ItemDropSpawner instance;
+    public static ItemDropSpawner Instance => instance;
 
     protected override void Awake()
     {
         base.Awake();
-        if (this.instance != null) Debug.LogError("More than one item drop spawner in scene!");
-        this.instance = this;
+        if (ItemDropSpawner.instance != null) Debug.LogError("Cannot have more than one ItemDropSpawner instance");
+        ItemDropSpawner.instance = this;
     }
 
-    public virtual void Drop(List<DropRate> droplist, Vector3 pos, Quaternion rot)
+    public virtual void Drop(List<DropRate> dropList, Vector3 position, Quaternion rotation)
     {
-        ItemCode.itemCode = droplist[0].itemSO.itemCode;
-        Transform itemDrop = this.Spawn(ItemCode.ToString(), pos, rot)
+        ItemCode itemCode = dropList[0].itemSO.itemCode;
+        Transform itemDrop = this.Spawn(itemCode.ToString(), position, rotation);
+        if (itemDrop == null) return;
+        
         itemDrop.gameObject.SetActive(true);
     }
 }

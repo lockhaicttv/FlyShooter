@@ -4,5 +4,5 @@ using UnityEngine;
 public class ItemSO : ScriptableObject
 {
     public string itemName = "Item";
-    public string itemCode = "code";
+    public ItemCode itemCode =ItemCode.NoItem;
 }
