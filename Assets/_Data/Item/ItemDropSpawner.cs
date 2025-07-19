@@ -11,7 +11,7 @@ public class ItemDropSpawner : Spawner
         base.Awake();
         if (ItemDropSpawner.instance != null) Debug.LogError("Cannot have more than one ItemDropSpawner instance");
         ItemDropSpawner.instance = this;
-    }
+       }
 
     public virtual void Drop(List<DropRate> dropList, Vector3 position, Quaternion rotation)
     {
@@ -19,6 +19,6 @@ public class ItemDropSpawner : Spawner
         Transform itemDrop = this.Spawn(itemCode.ToString(), position, rotation);
         if (itemDrop == null) return;
         
-        itemDrop.gameObject.SetActive(true);
+            itemDrop.gameObject.SetActive(true);
     }
 }

@@ -8,9 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a325403-7fcb-45ab-a597-4307f281664f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Data/Item/ItemDropSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Data/Item/ItemDropSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +56,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -73,6 +72,10 @@
       <workItem from="1751562951713" duration="108000" />
       <workItem from="1751563066078" duration="34000" />
       <workItem from="1751566937194" duration="3063000" />
+      <workItem from="1752922200782" duration="150000" />
+      <workItem from="1752922359327" duration="65000" />
+      <workItem from="1752922572852" duration="18000" />
+      <workItem from="1752923339179" duration="126000" />
     </task>
     <servers />
   </component>
@@ -107,5 +110,61 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.github.evgenys91.machinet.common.dslhistory.DslHistoryState">
+    <option name="historyDtoById">
+      <map>
+        <entry key="4e7a37">
+          <value>
+            <ChatHistoryModel>
+              <option name="id" value="4e7a37" />
+              <option name="initiateTms" value="1752922257542" />
+              <option name="request" value=" hello" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Welcome to Machinet AI! I'm here to help you get started. &#10;&#10;To begin, please sign in by clicking on the [sign in](https://plugin.machinet.net/#signin) link. After signing in, you'll need to subscribe to use Machinet AI. You can do that by visiting our [subscribe](https://plugin.machinet.net/#pricing) page.&#10;&#10;Here are the steps to sign in and subscribe:&#10;&#10;1. Press the 'Sign In' button at the left corner of the chat inside the IDE.&#10;2. You will be redirected to the Machinet website, where you can enter your email and password to sign in. &#10;3. If you don't have an account yet, click the 'Sign Up' button and fill out the registration form with your email, company, first name, last name, and password.&#10;4. After signing in, choose a Pro or Max subscription on the [pricing page](https://plugin.machinet.net/#pricing). You can also opt for a Pro Trial subscription to test Machinet AI for 10 days.&#10;&#10;Let me know if you need any further assistance!" />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1752922261144" />
+              <option name="usedLocalFilePaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/_Data/Item/ItemDropSpawner.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="d86bdf">
+          <value>
+            <ChatHistoryModel>
+              <option name="id" value="d86bdf" />
+              <option name="initiateTms" value="1752922273691" />
+              <option name="request" value=" do I need login to ask you" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Yes, you need to sign in to use Machinet AI and access its features. Please click on the [sign in](https://plugin.machinet.net/#signin) link to log in. After signing in, you will also need to subscribe to use the service. You can find the subscription options on the [pricing page](https://plugin.machinet.net/#pricing).&#10;&#10;If you have any questions about the sign-in or subscription process, feel free to ask!" />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1752922275774" />
+              <option name="usedLocalFilePaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/_Data/Item/ItemDropSpawner.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="greeting">
+          <value>
+            <ChatHistoryModel>
+              <option name="id" value="greeting" />
+              <option name="initiateTms" value="1752922252013" />
+              <option name="request" value="" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="&#10;Hello, I am Machinet AI - context aware chat, which can help you with your daily programming routine. How can I help?" />
+              <option name="responseTms" value="1752922253730" />
+            </ChatHistoryModel>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
